@@ -649,7 +649,7 @@ canvas {
 	}
 
 	.hero_right {
-		order: -1;
+		order: 2;
 	}
 
 	.hero_left {
@@ -744,5 +744,24 @@ canvas {
 	.services_item {
 		max-width: 100%;
 		flex-basis: 100%;
+	}
+
+	.line-background {
+		display: none;
+	}
+
+	.footer_copyrating {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.resuts_list {
+		justify-content: center;
+	}
+
+	#myChart {
+		width: 220px !important;
+		height: 250px !important;
 	}
 }
