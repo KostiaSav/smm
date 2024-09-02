@@ -6,6 +6,8 @@
 
 body {
 	font-family: 'Ubuntu', sans-serif;
+	color: #fff;
+	background-color: rgb(7, 4, 28);
 }
 
 html {
@@ -20,7 +22,15 @@ html {
 
 a {
 	text-decoration: none;
-	color: #333;
+	color: #fff;
+}
+
+.logo-second {
+	color: white;
+}
+
+.span-blue {
+	color: #007ab9 !important;
 }
 
 .header {
@@ -83,7 +93,7 @@ a {
 	width: 100%;
 	height: 2px;
 	border-radius: 5px;
-	background-color: #333;
+	background-color: rgb(220, 220, 220);
 	transform: scaleX(0);
 	transition: 0.3s;
 	transform-origin: left;
@@ -98,12 +108,17 @@ a {
 	align-items: center;
 	position: relative;
 	height: 100vh;
-	background: linear-gradient(to right, #232e37 50%, #ffffff 50%);
+	background: rgb(7, 4, 28);
+}
+
+canvas {
+	margin: 50px auto;
+	display: block;
 }
 
 .line-background {
 	position: absolute;
-	color: rgba(186, 186, 186, 0.2);
+	color: rgba(255, 255, 255, 0.2);
 }
 
 #vertical-line-top {
@@ -148,7 +163,7 @@ a {
 
 .hero .hero_left {
 	width: 50%;
-	color: white;
+	color: #fff;
 }
 
 .hero_right {
@@ -156,7 +171,7 @@ a {
 	flex-direction: column;
 	gap: 30px;
 	height: 50%;
-	color: #232e37;
+	color: #fff;
 }
 
 .hero-subtitle {
@@ -211,8 +226,17 @@ a {
 	margin-top: 0px;
 }
 
+.resuts_list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	column-gap: 100px;
+	row-gap: 70px;
+	margin-top: 80px;
+}
+
 .services {
-	margin-top: 120px;
+	margin-top: 140px;
 }
 
 .section-title {
@@ -262,23 +286,37 @@ a {
 .socials_list {
 	display: flex;
 	justify-content: center;
-	gap: 15%;
+	gap: 3%;
 	list-style: none;
 	margin-top: 100px;
-	flex-wrap: wrap;
 }
 
-.socials_item {
-	width: 200px;
-	text-align: center;
+.swiper-container {
+	padding: 20px 0;
+	overflow: hidden;
 }
 
-.socials_item i {
-	font-size: 42px;
+.swiper-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .socials-icon {
-	font-size: 48px;
+	font-size: 40px;
+	color: #ffffff;
+}
+
+.socials-item {
+	text-align: center;
+}
+
+.socials-item i {
+	font-size: 52px;
+}
+
+.socials-icon {
+	font-size: 52px;
 	transition: 0.5s;
 }
 
@@ -309,19 +347,43 @@ a {
 	color: #007ab9;
 }
 
+.reddit-icon {
+	color: #f74300;
+}
+
+.pinterest-icon {
+	color: #df1d26;
+}
+
+.snapchat-icon {
+	color: #f7f400;
+}
+
+.youtube-icon {
+	color: #f70000;
+}
+
+.x-icon {
+	color: #1c9be9;
+}
+
 .facebook-icon {
 	color: #1773ea;
 }
 
 .footer {
-	background-color: #232e37;
+	background-color: rgb(7, 4, 28);
 	color: white;
-	padding: 100px 0px 30px;
 	margin-top: 180px;
 }
 
+.footer .container {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 100px 0px 30px;
+}
+
 .footer a {
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .footer_main {
@@ -372,7 +434,7 @@ a {
 }
 
 .arrow-up-icon {
-	color: white;
+	color: #fff;
 	background: linear-gradient(white, #407bff) bottom no-repeat, #d1d2de;
 	background-size: 100% 0%;
 	background-clip: text;

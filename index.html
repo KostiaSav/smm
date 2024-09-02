@@ -16,13 +16,26 @@
 			crossorigin="anonymous"
 		></script>
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<header class="header">
 			<div class="container">
-				<a href="/" class="logo">
-					<h1 data-aos="fade-down">SMM</h1>
+				<a href="/" class="logo-second">
+					<h1 data-aos="fade-down">
+						<span class="span-blue"> # </span>smmz<span class="span-blue"
+							>.pro
+						</span>
+					</h1>
 				</a>
 
 				<nav class="navbar">
@@ -85,7 +98,17 @@
 						</div>
 					</div>
 					<div class="hero_right">
-						<div class="hero-item">
+						<canvas id="myChart" width="600" height="500"></canvas>
+					</div>
+				</div>
+			</section>
+
+			<section class="results">
+				<div class="container">
+					<h2 class="section-title" data-aos="fade-up">Наши результаты</h2>
+
+					<ul class="resuts_list">
+						<li class="hero-item">
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
@@ -101,9 +124,9 @@
 								<h2>1 000</h2>
 								<p>Завершёных заказок</p>
 							</div>
-						</div>
+						</li>
 
-						<div class="hero-item">
+						<li class="hero-item">
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
@@ -119,9 +142,9 @@
 								<h2>100</h2>
 								<p>Постоянных клиентов</p>
 							</div>
-						</div>
+						</li>
 
-						<div class="hero-item">
+						<li class="hero-item">
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
@@ -137,9 +160,9 @@
 								<h2>600</h2>
 								<p>Отзывов</p>
 							</div>
-						</div>
+						</li>
 
-						<div class="hero-item">
+						<li class="hero-item">
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
@@ -155,8 +178,80 @@
 								<h2>100%</h2>
 								<p>Наш рейтинг</p>
 							</div>
-						</div>
-					</div>
+						</li>
+
+						<li class="hero-item">
+							<div
+								class="hero-icons__wrapper"
+								data-aos="flip-left"
+								data-aos-delay="550"
+							>
+								<i class="fa-brands fa-rocketchat hero-icons"></i>
+							</div>
+							<div
+								class="hero-item-content"
+								data-aos="fade-up"
+								data-aos-delay="550"
+							>
+								<h2>600</h2>
+								<p>Отзывов</p>
+							</div>
+						</li>
+
+						<li class="hero-item">
+							<div
+								class="hero-icons__wrapper"
+								data-aos="flip-left"
+								data-aos-delay="650"
+							>
+								<i class="fa-solid fa-face-smile hero-icons"></i>
+							</div>
+							<div
+								class="hero-item-content"
+								data-aos="fade-up"
+								data-aos-delay="650"
+							>
+								<h2>100%</h2>
+								<p>Наш рейтинг</p>
+							</div>
+						</li>
+
+						<li class="hero-item">
+							<div
+								class="hero-icons__wrapper"
+								data-aos="flip-left"
+								data-aos-delay="550"
+							>
+								<i class="fa-brands fa-rocketchat hero-icons"></i>
+							</div>
+							<div
+								class="hero-item-content"
+								data-aos="fade-up"
+								data-aos-delay="550"
+							>
+								<h2>600</h2>
+								<p>Отзывов</p>
+							</div>
+						</li>
+
+						<li class="hero-item">
+							<div
+								class="hero-icons__wrapper"
+								data-aos="flip-left"
+								data-aos-delay="650"
+							>
+								<i class="fa-solid fa-face-smile hero-icons"></i>
+							</div>
+							<div
+								class="hero-item-content"
+								data-aos="fade-up"
+								data-aos-delay="650"
+							>
+								<h2>100%</h2>
+								<p>Наш рейтинг</p>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</section>
 
@@ -201,7 +296,7 @@
 				<div class="container">
 					<h2 class="section-title" data-aos="fade-up">Социальные сети</h2>
 
-					<ul class="socials_list">
+					<!-- <ul class="socials_list">
 						<li class="socials-item" data-aos="fade-up" data-aos-delay="200">
 							<a href="#">
 								<i class="fa-brands fa-telegram socials-icon telegram-icon"></i>
@@ -234,7 +329,62 @@
 								<i class="fa-brands fa-tiktok socials-icon tiktok-icon"></i>
 							</a>
 						</li>
-					</ul>
+					</ul> -->
+
+					<div class="swiper-container" data-aos="fade-down">
+						<div class="swiper-wrapper socials_list">
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-telegram socials-icon telegram-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-instagram socials-icon instagram-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-facebook socials-icon facebook-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-twitter socials-icon x-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-linkedin socials-icon linkedin-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-tiktok socials-icon tiktok-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-youtube socials-icon youtube-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-reddit socials-icon reddit-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-pinterest socials-icon pinterest-icon"></i>
+								</a>
+							</div>
+							<div class="swiper-slide socials-item">
+								<a href="#">
+									<i class="fab fa-snapchat socials-icon snapchat-icon"></i>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -244,7 +394,11 @@
 				<div class="footer_main">
 					<div class="footer_main__left">
 						<a href="/" class="logo-footer">
-							<h1>SMM</h1>
+							<h1 data-aos="fade-down">
+								<span class="span-blue"> # </span>smmz<span class="span-blue"
+									>.pro
+								</span>
+							</h1>
 						</a>
 					</div>
 
@@ -290,9 +444,63 @@
 			</div>
 		</footer>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 		<script>
 			AOS.init({
 				duration: 1000,
+			});
+
+			const ctx = document.getElementById('myChart').getContext('2d');
+			const myChart = new Chart(ctx, {
+				type: 'bar',
+				data: {
+					labels: [
+						'Охват аудитории',
+						'Лояльность аудитории',
+						'Узнаваемость бренда',
+						'Продаваемость бренда',
+						'Прибавление постоянных клиентов',
+					],
+					datasets: [
+						{
+							label: 'До',
+							data: [17, 30, 12, 20, 23],
+							backgroundColor: 'rgba(75, 192, 192, 0.2)',
+							borderColor: 'rgba(75, 192, 192, 1)',
+							borderWidth: 1,
+						},
+						{
+							label: 'После',
+							data: [70, 85, 80, 73, 57],
+							backgroundColor: 'rgba(54, 162, 235, 0.2)',
+							borderColor: 'rgba(54, 162, 235, 1)',
+							borderWidth: 1,
+						},
+					],
+				},
+				options: {
+					scales: {
+						y: {
+							beginAtZero: true,
+							max: 100,
+						},
+					},
+					animation: {
+						duration: 2000, // Продолжительность анимации
+						easing: 'easeOutBounce', // Эффект анимации
+					},
+				},
+			});
+
+			var swiper = new Swiper('.swiper-container', {
+				slidesPerView: 7,
+				spaceBetween: 30,
+				loop: true,
+				autoplay: {
+					delay: 1500,
+				},
 			});
 		</script>
 	</body>
