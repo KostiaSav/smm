@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>smmz.pro</title>
+		<title>MY.SMM</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -25,15 +25,820 @@
 			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 		/>
 
-		<link rel="stylesheet" href="style.css" />
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Ubuntu', sans-serif;
+				color: #fff;
+				background-color: rgb(7, 4, 28);
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			a {
+				text-decoration: none;
+				color: #fff;
+			}
+
+			.logo-second {
+				color: white;
+			}
+
+			.span-blue {
+				color: #007ab9 !important;
+			}
+
+			.header {
+				position: absolute;
+				width: 100%;
+				top: 0;
+				left: 0;
+				background-color: rgba(0, 0, 0, 0);
+				padding: 20px 0px;
+				z-index: 3;
+			}
+
+			.header .container {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 20px;
+			}
+
+			.logo {
+				color: white;
+				position: relative;
+
+				background: linear-gradient(white, #407bff) bottom no-repeat, #d1d2de;
+				background-size: 100% 0%;
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				transition: 1s ease-in-out;
+			}
+
+			.logo-footer h1 {
+				color: white;
+			}
+
+			.logo:hover {
+				background-size: 100% 100%;
+			}
+
+			.logo h1 {
+				color: white;
+			}
+
+			.navbar ul {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				gap: 35px;
+			}
+
+			.navbar ul li {
+				position: relative;
+			}
+
+			.navbar ul li::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -4px;
+				width: 100%;
+				height: 2px;
+				border-radius: 5px;
+				background-color: rgb(220, 220, 220);
+				transform: scaleX(0);
+				transition: 0.3s;
+				transform-origin: left;
+			}
+
+			.navbar ul li:hover::before {
+				transform: scaleX(1);
+			}
+
+			.hero {
+				display: flex;
+				align-items: center;
+				position: relative;
+				height: 100vh;
+				background: rgb(7, 4, 28);
+			}
+
+			canvas {
+				margin: 50px auto;
+				display: block;
+			}
+
+			.line-background {
+				position: absolute;
+				color: rgba(255, 255, 255, 0.2);
+			}
+
+			#vertical-line-top {
+				width: 100%;
+				height: 1px;
+				z-index: 6;
+				top: 10%;
+				left: 0;
+			}
+
+			#vertical-line-bottom {
+				width: 100%;
+				height: 1px;
+				z-index: 6;
+				top: 90%;
+				left: 0;
+			}
+
+			#horizontal-line-left {
+				width: 1px;
+				height: 100%;
+				z-index: 6;
+				top: 0;
+				left: 6%;
+			}
+
+			#horizontal-line-right {
+				width: 1px;
+				height: 100%;
+				z-index: 6;
+				top: 0;
+				left: 94%;
+			}
+
+			.hero .container {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 20px;
+			}
+
+			.hero .hero_left {
+				width: 50%;
+				color: #fff;
+			}
+
+			.hero_right {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+				height: 50%;
+				color: #fff;
+			}
+
+			.hero-subtitle {
+				font-size: 26px;
+			}
+
+			.hero-title {
+				font-size: 48px;
+				margin-top: 30px;
+				line-height: 1.2em;
+			}
+
+			.hero-description {
+				font-size: 18px;
+				margin-top: 20px;
+				line-height: 2rem;
+			}
+
+			.hero-item {
+				display: flex;
+				align-items: center;
+				gap: 25px;
+			}
+
+			.hero-icons__wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 50px;
+				height: 50px;
+				background-color: #232e37;
+				border-radius: 8px;
+				padding: 12px;
+				transition: 0.5s;
+			}
+
+			.hero-icons__wrapper:hover {
+				background-color: #2463eb;
+			}
+
+			.hero-icons {
+				font-size: 24px;
+				color: white;
+			}
+
+			.hero-item h2 {
+				font-size: 24px;
+			}
+
+			.hero-item p {
+				font-size: 18px;
+				margin-top: 0px;
+			}
+
+			.resuts_list {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				column-gap: 100px;
+				row-gap: 70px;
+				margin-top: 80px;
+			}
+
+			.services {
+				margin-top: 140px;
+			}
+
+			.section-title {
+				font-size: 36px;
+				text-align: center;
+				margin-bottom: 50px;
+			}
+
+			.services_list {
+				display: flex;
+				justify-content: space-between;
+				gap: 30px;
+				list-style: none;
+				margin-top: 100px;
+			}
+
+			.services_item {
+				max-width: 200px;
+				text-align: center;
+			}
+
+			.services_item img {
+				max-width: 150px;
+				height: 150px;
+				margin-bottom: 40px;
+				transition: 0.5s;
+			}
+
+			.services_item:hover img {
+				transform: scale(1.2);
+			}
+
+			.service-title {
+				font-size: 24px;
+			}
+
+			.service-description {
+				font-size: 18px;
+				margin-top: 20px;
+				line-height: 1.5em;
+			}
+
+			.socials {
+				margin-top: 120px;
+			}
+
+			.socials_list {
+				display: flex;
+				justify-content: center;
+				gap: 3%;
+				list-style: none;
+				margin-top: 100px;
+			}
+
+			.swiper-container {
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+
+			.socials_list {
+				display: flex;
+				align-items: center;
+				width: max-content;
+				animation: scroll 8s linear infinite;
+			}
+
+			.socials-item {
+				margin-right: 20px;
+			}
+
+			@keyframes scroll {
+				0% {
+					transform: translateX(0);
+				}
+				100% {
+					transform: translateX(calc(-50% - 600px));
+				}
+			}
+
+			.socials-icon {
+				font-size: 40px;
+				color: #ffffff;
+			}
+
+			.socials-item {
+				text-align: center;
+				width: 80px;
+			}
+
+			.socials-item i {
+				font-size: 64px;
+			}
+
+			.socials-icon {
+				font-size: 52px;
+				transition: 0.5s;
+			}
+
+			.socials-icon:hover {
+				transform: scale(1.2);
+			}
+
+			.telegram-icon {
+				color: #2aa3dc;
+			}
+
+			.instagram-icon {
+				color: transparent;
+				background: linear-gradient(
+					45deg,
+					#f09433 0%,
+					#e6683c 25%,
+					#dc2743 50%,
+					#cc2366 75%,
+					#bc1888 100%
+				);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			.linkedin-icon {
+				color: #007ab9;
+			}
+
+			.reddit-icon {
+				color: #f74300;
+			}
+
+			.pinterest-icon {
+				color: #df1d26;
+			}
+
+			.snapchat-icon {
+				color: #f7f400;
+			}
+
+			.youtube-icon {
+				color: #f70000;
+			}
+
+			.x-icon {
+				color: #1c9be9;
+			}
+
+			.facebook-icon {
+				color: #1773ea;
+			}
+
+			.footer {
+				background-color: rgb(7, 4, 28);
+				color: white;
+				margin-top: 180px;
+			}
+
+			.footer .container {
+				border-top: 1px solid rgba(255, 255, 255, 0.2);
+				padding: 100px 0px 30px;
+			}
+
+			.footer a {
+				color: rgba(255, 255, 255, 0.8);
+			}
+
+			.footer_main {
+				display: flex;
+				justify-content: space-between;
+				gap: 20px;
+				padding: 0 20px;
+			}
+
+			.footer_list-title {
+				display: flex;
+				gap: 20px;
+				font-size: 24px;
+			}
+
+			.footer_list ul {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+				margin-left: 0;
+				padding-left: 0;
+				margin-top: 20px;
+				list-style: none;
+			}
+
+			.footer_list ul li i {
+				width: 10px;
+			}
+
+			.footer_list-link {
+				position: relative;
+				transition: 0.5s;
+			}
+
+			.footer_list-link i {
+				margin-right: 20px;
+			}
+
+			.footer_list-link::before {
+				content: '';
+				position: absolute;
+				bottom: -4px;
+				left: 0;
+				width: 100%;
+				height: 1.5px;
+				background-color: white;
+				transition: 0.3s;
+				transform: scaleX(0);
+			}
+
+			.footer_list-link:hover::before {
+				transform: scaleX(1);
+			}
+
+			.footer_main__right {
+				display: flex;
+				gap: 120px;
+			}
+
+			.arrow-up-icon {
+				color: #fff;
+				background: linear-gradient(white, #407bff) bottom no-repeat, #d1d2de;
+				background-size: 100% 0%;
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				transition: 1s ease-in-out;
+				font-size: 42px;
+			}
+
+			.arrow-up-icon:hover {
+				background-size: 100% 100%;
+			}
+
+			.footer_copyrating {
+				padding: 30px 0px;
+				margin-top: 30px;
+				text-align: center;
+				border-top: 1px solid rgba(186, 186, 186, 0.2);
+			}
+
+			.cta-button {
+				color: white;
+				background-color: #407bff;
+				font-size: 18px;
+				font-weight: bold;
+				border: 0;
+				border-radius: 6px;
+				padding: 12px 24px;
+				cursor: pointer;
+				transition: 0.5s;
+			}
+
+			.cta-button:hover {
+				background-color: #2463eb;
+			}
+
+			.hero-btns {
+				display: flex;
+				gap: 30px;
+				margin-top: 30px;
+			}
+
+			.burger {
+				--burger-width: 30px;
+				--burger-height: 30px;
+				--burger-line-height: 2px;
+
+				position: relative;
+				border: none;
+				padding: 0;
+				width: var(--burger-width);
+				height: var(--burger-height);
+				color: #000;
+				background-color: transparent;
+				cursor: pointer;
+				color: white !important;
+				margin-left: 18px;
+				z-index: 1001;
+			}
+
+			.burger::before,
+			.burger::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: var(--burger-line-height);
+				background-color: currentColor;
+				transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+			}
+
+			.burger::before {
+				top: 0;
+			}
+
+			.burger::after {
+				top: calc(100% - var(--burger-line-height));
+			}
+
+			.burger__line {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 100%;
+				height: var(--burger-line-height);
+				background-color: currentColor;
+				transform: translateY(-50%);
+				transition: transform 0.3s ease-in-out;
+			}
+
+			.burger--active::before {
+				top: 50%;
+				transform: rotate(45deg);
+				transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+			}
+
+			.burger--active::after {
+				top: 50%;
+				transform: rotate(-45deg);
+				transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+			}
+
+			.burger--active .burger__line {
+				transform: scale(0);
+				transition: transform 0.3s ease-in-out;
+			}
+
+			@media screen and (min-width: 682px) {
+				.burger {
+					display: none;
+				}
+			}
+
+			@media screen and (max-width: 682px) {
+				.navbar {
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100vh;
+					background-color: rgba(7, 4, 28, 0.95);
+					padding: 20px 0;
+					z-index: 999;
+					transform: translateX(-100%);
+					transition: 0.5s;
+				}
+
+				.navbar ul {
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					height: 100%;
+					gap: 35px;
+				}
+
+				.navbar ul li {
+					font-size: 36px;
+				}
+
+				.navbar.menu--active {
+					transform: translateX(0);
+				}
+			}
+
+			@media screen and (max-width: 992px) {
+				.hero-subtitle {
+					font-size: 22px;
+				}
+
+				.hero-title {
+					font-size: 36px;
+					margin-top: 15px;
+				}
+
+				.hero-description {
+					font-size: 16px;
+				}
+
+				#myChart {
+					width: 400px !important;
+					height: 300px !important;
+				}
+
+				.services_item {
+					max-width: 138px;
+				}
+
+				.service-title {
+					font-size: 20px;
+				}
+
+				.service-description {
+					font-size: 14px;
+				}
+
+				.services_item img {
+					max-width: 138px;
+					height: 138px;
+				}
+			}
+
+			@media screen and (max-width: 712px) {
+				.hero .container {
+					flex-direction: column;
+					margin-top: 100px;
+				}
+
+				#myChart {
+					width: 300px !important;
+					height: 250px !important;
+					margin-bottom: 10px;
+				}
+
+				.hero {
+					min-height: 740px;
+				}
+
+				.hero_right {
+					order: 2;
+				}
+
+				.hero_left {
+					width: 100%;
+				}
+
+				.hero .hero_left {
+					width: 100%;
+				}
+
+				#vertical-line-top {
+					top: 1%;
+				}
+
+				#vertical-line-bottom {
+					top: 99%;
+				}
+
+				#horizontal-line-left {
+					left: 1%;
+				}
+
+				#horizontal-line-right {
+					left: 99%;
+				}
+
+				.results {
+					margin-top: 120px;
+				}
+
+				.resuts_list {
+					justify-content: space-between;
+					column-gap: 0px;
+				}
+
+				.hero-item {
+					flex-basis: 180px;
+				}
+
+				.hero-item {
+					flex-direction: column;
+					text-align: center;
+				}
+
+				.hero-item h2 {
+					font-size: 20px;
+				}
+
+				.hero-item p {
+					font-size: 16px;
+					margin-top: 10px;
+				}
+
+				.services_list {
+					gap: 10px;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					row-gap: 80px;
+				}
+
+				.services_item {
+					max-width: 100%;
+					flex-basis: 40%;
+				}
+
+				.footer_main {
+					flex-wrap: wrap;
+					column-gap: 30px;
+					row-gap: 50px;
+				}
+
+				.footer_main__right {
+					gap: 30px;
+				}
+			}
+
+			@media screen and (max-width: 430px) {
+				.hero_left {
+					text-align: center;
+				}
+
+				.hero-btns {
+					justify-content: center;
+				}
+
+				#myChart {
+					width: 250px !important;
+					height: 200px !important;
+					margin-bottom: 20px;
+				}
+
+				.hero-item {
+					flex-basis: 130px;
+				}
+
+				.services_item {
+					max-width: 100%;
+					flex-basis: 100%;
+				}
+
+				.line-background {
+					display: none;
+				}
+
+				.footer_copyrating {
+					font-size: 14px;
+				}
+			}
+
+			@media screen and (max-width: 300px) {
+				.resuts_list {
+					justify-content: center;
+				}
+
+				#myChart {
+					width: 220px !important;
+					height: 250px !important;
+				}
+
+				.footer_main__right {
+					flex-direction: column;
+					gap: 50px;
+				}
+
+				.hero .hero_left {
+					margin-top: 200px;
+				}
+
+				.hero-subtitle {
+					font-size: 18px;
+				}
+
+				.hero-title {
+					font-size: 28px;
+					margin-top: 15px;
+				}
+
+				.hero-description {
+					font-size: 14px;
+					line-height: 1.8em;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<header class="header">
 			<div class="container">
 				<a href="/" class="logo-second">
 					<h1 data-aos="fade-down">
-						<span class="span-blue"> # </span>smmz<span class="span-blue"
-							>.pro
+						<span class="span-blue"> # </span>MY<span class="span-blue"
+							>.SMM
 						</span>
 					</h1>
 				</a>
@@ -89,11 +894,12 @@
 
 						<p
 							class="hero-description"
-							data-aos="fade-left"
+							data-aos="fade-right"
 							data-aos-delay="600"
 						>
-							Лайки, репосты, подписчики и десятки других услуг для популярных
-							социальных сетей.
+							Удобная панель управления, API интеграция, Варианты множественной
+							оплаты, Низкая цена, Высокая скорость выполнения заказов,
+							Интуитивно понятный интерфейс, Полная аналитика и отчетность
 						</p>
 
 						<div class="hero-btns">
@@ -126,8 +932,8 @@
 								data-aos="fade-up"
 								data-aos-delay="300"
 							>
-								<h2>1 000</h2>
-								<p>Завершёных заказок</p>
+								<h2>1 000+</h2>
+								<p>Клиентов</p>
 							</div>
 						</li>
 
@@ -144,8 +950,8 @@
 								data-aos="fade-up"
 								data-aos-delay="450"
 							>
-								<h2>100</h2>
-								<p>Постоянных клиентов</p>
+								<h2>200+</h2>
+								<p>Отзывов</p>
 							</div>
 						</li>
 
@@ -162,8 +968,8 @@
 								data-aos="fade-up"
 								data-aos-delay="550"
 							>
-								<h2>600</h2>
-								<p>Отзывов</p>
+								<h2>10+</h2>
+								<p>Вариантов оплаты</p>
 							</div>
 						</li>
 
@@ -171,17 +977,17 @@
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
-								data-aos-delay="650"
+								data-aos-delay="600"
 							>
-								<i class="fa-solid fa-face-smile hero-icons"></i>
+								<i class="fa-solid fa-briefcase hero-icons"></i>
 							</div>
 							<div
 								class="hero-item-content"
 								data-aos="fade-up"
-								data-aos-delay="650"
+								data-aos-delay="600"
 							>
-								<h2>100%</h2>
-								<p>Наш рейтинг</p>
+								<h2>30+</h2>
+								<p>Проектов в разработке</p>
 							</div>
 						</li>
 
@@ -189,17 +995,17 @@
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
-								data-aos-delay="550"
+								data-aos-delay="700"
 							>
-								<i class="fa-brands fa-rocketchat hero-icons"></i>
+								<i class="fa-solid fa-clock hero-icons"></i>
 							</div>
 							<div
 								class="hero-item-content"
 								data-aos="fade-up"
-								data-aos-delay="550"
+								data-aos-delay="700"
 							>
-								<h2>600</h2>
-								<p>Отзывов</p>
+								<h2>24/7</h2>
+								<p>Техническая поддержка</p>
 							</div>
 						</li>
 
@@ -207,17 +1013,17 @@
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
-								data-aos-delay="650"
+								data-aos-delay="750"
 							>
-								<i class="fa-solid fa-face-smile hero-icons"></i>
+								<i class="fa-solid fa-thumbs-up hero-icons"></i>
 							</div>
 							<div
 								class="hero-item-content"
 								data-aos="fade-up"
-								data-aos-delay="650"
+								data-aos-delay="750"
 							>
-								<h2>100%</h2>
-								<p>Наш рейтинг</p>
+								<h2>500+</h2>
+								<p>Удовлетворенных клиентов</p>
 							</div>
 						</li>
 
@@ -225,17 +1031,17 @@
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
-								data-aos-delay="550"
+								data-aos-delay="800"
 							>
-								<i class="fa-brands fa-rocketchat hero-icons"></i>
+								<i class="fa-solid fa-globe hero-icons"></i>
 							</div>
 							<div
 								class="hero-item-content"
 								data-aos="fade-up"
-								data-aos-delay="550"
+								data-aos-delay="800"
 							>
-								<h2>600</h2>
-								<p>Отзывов</p>
+								<h2>20</h2>
+								<p>Стран охвачено</p>
 							</div>
 						</li>
 
@@ -243,17 +1049,17 @@
 							<div
 								class="hero-icons__wrapper"
 								data-aos="flip-left"
-								data-aos-delay="650"
+								data-aos-delay="850"
 							>
-								<i class="fa-solid fa-face-smile hero-icons"></i>
+								<i class="fa-solid fa-crown hero-icons"></i>
 							</div>
 							<div
 								class="hero-item-content"
 								data-aos="fade-up"
-								data-aos-delay="650"
+								data-aos-delay="850"
 							>
-								<h2>100%</h2>
-								<p>Наш рейтинг</p>
+								<h2>1 место</h2>
+								<p>На рынке услуг</p>
 							</div>
 						</li>
 					</ul>
@@ -265,21 +1071,30 @@
 					<h2 class="section-title" data-aos="fade-up">Наши услуги</h2>
 					<ul class="services_list">
 						<li class="services_item" data-aos="fade-up" data-aos-delay="200">
-							<img src="images/rocket.png" alt="rocket" />
+							<img
+								src="https://telegra.ph/file/f83554a7a725121dd7634.png"
+								alt="rocket"
+							/>
 							<h3 class="service-title">Быстро</h3>
 							<p class="service-description">
 								Старт заказов в течении нескольких минут
 							</p>
 						</li>
 						<li class="services_item" data-aos="fade-up" data-aos-delay="400">
-							<img src="images/click.png" alt="click" />
+							<img
+								src="https://telegra.ph/file/7d6289b20981d605e2a02.png"
+								alt="click"
+							/>
 							<h3 class="service-title">Качественно</h3>
 							<p class="service-description">
 								Мы гарантируем високое качества наших услуг
 							</p>
 						</li>
 						<li class="services_item" data-aos="fade-up" data-aos-delay="500">
-							<img src="images/security.png" alt="security" />
+							<img
+								src="https://telegra.ph/file/f7ce7d577754b27718be6.png"
+								alt="security"
+							/>
 							<h3 class="service-title">Надежно</h3>
 							<p class="service-description">
 								Полное конфидециальность. Никто не узнает, что вы пользоались
@@ -287,7 +1102,10 @@
 							</p>
 						</li>
 						<li class="services_item" data-aos="fade-up" data-aos-delay="600">
-							<img src="images/hand_humans.png" alt="humans" />
+							<img
+								src="https://telegra.ph/file/4c30840402cfee057e7c7.png"
+								alt="humans"
+							/>
 							<h3 class="service-title">Большие охваты</h3>
 							<p p class="service-description">
 								Мы поможем вам достигнуть больших охватов
@@ -416,8 +1234,8 @@
 					<div class="footer_main__left">
 						<a href="/" class="logo-footer">
 							<h1 data-aos="fade-down">
-								<span class="span-blue"> # </span>smmz<span class="span-blue"
-									>.pro
+								<span class="span-blue"> # </span>My.<span class="span-blue"
+									>SMM
 								</span>
 							</h1>
 						</a>
@@ -425,30 +1243,37 @@
 
 					<div class="footer_main__right">
 						<div class="footer_list">
-							<h3 class="footer_list-title">Услуги</h3>
+							<h3 class="footer_list-title">
+								<i class="fa-solid fa-question"></i>
+								Как работает наша SMM панель реселлера
+							</h3>
 							<ul>
 								<li>
-									<a href="#" class="footer_list-link">Telegram</a>
+									<a href="#" class="footer_list-link">
+										<i class="fa-solid fa-fire"></i>
+										Зарегистрироваться
+									</a>
 								</li>
 
 								<li>
-									<a href="#" class="footer_list-link">Instagram</a>
+									<a href="#" class="footer_list-link">
+										<i class="fa-solid fa-money-bill"></i>
+										Пополнить счет
+									</a>
 								</li>
 
 								<li>
-									<a href="#" class="footer_list-link">Facebook</a>
+									<a href="#" class="footer_list-link">
+										<i class="fa-solid fa-share-from-square"></i>
+										Разместить заказ
+									</a>
 								</li>
 
 								<li>
-									<a href="#" class="footer_list-link">X</a>
-								</li>
-
-								<li>
-									<a href="#" class="footer_list-link">Linkedin</a>
-								</li>
-
-								<li>
-									<a href="#" class="footer_list-link">Tiktok</a>
+									<a href="#" class="footer_list-link">
+										<i class="fa-solid fa-eye"></i>
+										Следить за своим ростом в социальных сетях
+									</a>
 								</li>
 							</ul>
 						</div>
@@ -597,17 +1422,6 @@
 					},
 				},
 			});
-
-			// var swiper = new Swiper('.swiper-container', {
-			// 	slidesPerView: 7,
-			// 	spaceBetween: 30,
-			// 	speed: 500,
-			// 	centeredSlides: true,
-			// 	loop: true,
-			// 	autoplay: {
-			// 		delay: 0,
-			// 	},
-			// });
 		</script>
 	</body>
 </html>
